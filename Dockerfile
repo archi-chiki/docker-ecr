@@ -1,7 +1,9 @@
 FROM nginx:latest
-COPY index.html /usr/share/nginx/html
-COPY inner-page.html /usr/share/nginx/html
-COPY portfolio-details.html /usr/share/nginx/html
-COPY assets /usr/share/nginx/html/assets
-COPY forms /usr/share/nginx/html/forms
+ENV path=/usr/share/nginx
+COPY index.html $path/html
+COPY inner-page.html $path/html
+COPY portfolio-details.html $path/html
+COPY assets $path/html/assets
+COPY forms $path/html/forms
+WORKDIR $path/html
 CMD ["nginx", "-g", "daemon off;"]
