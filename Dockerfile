@@ -1,4 +1,5 @@
 FROM nginx:latest
+LABEL maintainer="galahad0001@ucware.net"
 ENV path=/usr/share/nginx
 COPY index.html $path/html
 COPY inner-page.html $path/html
